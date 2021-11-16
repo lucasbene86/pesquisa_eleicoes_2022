@@ -1,0 +1,349 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;500&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body{
+    background-color: #f6f6f6;
+}
+
+.container_cima{
+    width: 100vw;
+    height: 85vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.total_de_votos{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: right;
+}
+
+.votos{
+    margin-right: 1rem;
+    background-color: #066eea;
+    font-weight: 700;
+    width: 100px;
+    height: 100px;
+    border-radius: 50px;
+    font-size: 40px;
+    top: 10%;
+    position: relative;
+    transform: translateY(-50%);
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    color:white;
+    line-height: 28px;
+}
+.votos span{
+    font-size: 25px;
+    font-weight: 500;
+}
+
+.container_cima_esquerda{
+    height: 85vh;
+    width: 25vw;
+    display: flex;
+    justify-content: center;
+}
+
+.container_cima_esquerda .logo{
+    margin-top: 2rem;
+    width: 10vw;
+}
+
+
+.container_cima_meio{
+    width: 50vw;
+    height: 80vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+}
+
+.container_cima_direita{
+    width: 25vw;
+    height: 85vh;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+}
+
+.container_baixo{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100vw;
+    height: 15vh;
+
+}
+
+.container_adsense{
+    background-color: #838383;
+    width: 40%;
+    height: 90%;
+    text-align: center;
+
+}
+
+
+/* ----------------GRAFICO---------------- */
+#container_grafico{
+    width: 40vw;
+    height: 60vh;
+    display: flex;
+    border-radius: 10px;
+}
+
+.container_candidato_foto{
+    width: 20%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.container_candidato_parcial{
+    width: 70%;
+    float: left;
+}
+
+
+.avatar {
+    width: 80px;
+    background-color: rgb(231, 231, 231);
+    height: 80px;
+    margin-bottom: 10px;
+	border-radius: 10px;
+}
+
+.bolsonaro{
+    background-image: url("https://i.postimg.cc/NG90BP4z/bolsonaro.png");
+	background-position: center;
+    background-size: 200%;
+}
+
+.ciro_gomes{
+    background-image: url("https://i.postimg.cc/P5zsd19c/ciro.png");
+    background-size: 200%;
+	background-position: center;
+
+}
+.joao_doria{
+    background-image: url("https://i.postimg.cc/76RjK9JC/joao-doria.png");
+	background-position: center;
+    background-size: 180%;
+}
+.lula{
+    background-image: url("https://i.postimg.cc/yW4tHNPs/lula.png");
+	background-position: center;
+    background-size: 200%;
+}
+.mandeta{
+    background-image: url("https://i.postimg.cc/dQbV1mNt/mandeta.png");
+	background-position: center;
+    background-size: 200%;
+}
+
+
+.busca_valor{
+    width: 100%;
+    height: 12%;
+    font-size: 1rem;
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+.busca_nome_centralizado{
+    position: relative;
+    font-size: 15px;
+    line-height: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+    text-align: center;
+}
+
+.insert_busca_width{
+    padding: 10px;
+    background: rgb(54, 54, 54);
+    height: 60%;
+    color: white;
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
+    border-radius: 5px;
+    
+}
+
+
+
+
+.circulo1{
+    position: absolute;
+    height: 100vh;
+    width: 100vw;
+    background-color: rgb(219, 219, 219);
+    clip-path: circle(71% at left);  /*Faz o circulo*/
+    z-index: -1;
+}
+
+.circulo2{
+    position: absolute;
+    height: 100vh;
+    width: 100vw;
+    background-color: rgb(46, 46, 46);
+    clip-path: circle(70% at left);  /*Faz o circulo*/
+    z-index: -1;
+}
+
+
+.container-menu-baixo{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin-top: 1rem;
+}
+
+.container-menu-baixo button{
+    border: 1px solid rgb(230, 230, 230);
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    height: 7rem;
+    width: 12rem;
+    margin-left: 10px;
+    background-color: rgb(250, 250, 250);
+    color: rgb(46, 46, 46);
+    font-size: 90%;
+    cursor: pointer;
+    transition: all .3s ease;
+}
+
+.votacao{
+    background-image: url('https://i.postimg.cc/fTFfXYGc/votar-icone.png');
+    background-size: 35%;
+    background-position:center;
+    background-repeat: no-repeat;
+    background-position-y: 0.7rem;
+}
+
+.sobre{
+    background-image: url('https://i.postimg.cc/FRCHxHTY/infor-icone.png');
+    background-size: 35%;
+    background-position:center;
+    background-repeat: no-repeat;
+    background-position-y: 0.7rem;
+}
+
+.container-menu-baixo button:hover{
+    background-size: 38%;
+    margin-left: 10px;
+    background-color: #066eea;
+    color: white;
+}
+
+
+@media only screen and (max-width: 600px){
+    body{
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+    }
+
+
+    .titulo-site{
+        height: 15vh;
+        width: 100vw;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .titulo-site .logo{
+        margin-top: 1rem;
+        width: 5rem;
+    }
+
+
+
+    .container_grafico{
+        width: 75%;
+        display: flex;
+        border-radius: 10px;
+    }
+
+    .candidato_parcial{
+        width: 80%;
+        float: left;
+    }
+
+    .busca_nome{
+        width: 40px;
+        height: 40px;
+        margin-bottom: 10px;
+        border-radius: 40px;
+    }
+
+    .busca_valor{
+        height: 40px;
+        font-size: 70%;
+    }
+
+
+    .bolsonaro, .joao_doria, .ciro_gomes, .mandeta, .lula {
+        background-size: 200%;  /* Diminui do background */
+    }
+
+    .busca_nome_centralizado{
+        font-size: 50%;
+        line-height: 8px;
+    }
+
+    .outroCPF{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 10vh;
+        width: 100vw;
+    }
+
+    .outroCPF .voto{
+        float: right;
+        margin-right: 0;
+        margin-top: 0;
+    }
+
+    .total_de_votos{
+        margin-right: 0;
+        width: 100vw;
+        height: 15vh;
+    }
+
+    .votos{
+        float: right;
+        margin-right: 1rem;
+        margin-top: 1rem;
+        width: 4rem;
+        height: 4rem;
+        border-radius: 50px;
+        font-size: 120%;
+        line-height: 18px;
+    }
+
+    .votos span{
+        font-size: 90%;
+    }
+}

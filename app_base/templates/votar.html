@@ -1,0 +1,39 @@
+{% extends "login.html" %}
+
+{% block conteudo %}
+    <div class="container_cabecalho">
+        <h3 class="Informacao_tela_login">Apenas um voto é permitido por pessoa<span>Escolha o seu candidato</span></h3>
+    </div>
+    <div class="container_candidatos">
+
+        <form class="candidato cand_1" method='get' action='#'>
+            <button class="bolsonaro" type="submit" value="bolsonaro" name="Next">Bolsonaro <span>sem partido</span></button>
+        </form>
+
+        <form class="candidato cand_2" method='get' action='#'>
+            <button class="ciro_gomes" type="submit" value="ciro_gomes" name="Next">Ciro Gomes <span>PDT</span></button>
+        </form>
+
+        <form class="candidato cand_3" method='get' action='#'>
+            <button class="joao_doria" type="submit" value="joao_doria" name="Next">João Doria <span>PSDB</span></button>
+        </form>
+
+        <form class="candidato cand_4" method='get' action='#'>
+            <button class="lula" type="submit" value="lula" name="Next">Lula <span>PT</span></button>
+        </form>
+
+        <form class="candidato cand_5" method='get' action='#'>
+            <button class="mandeta" type="submit" value="mandeta" name="Next">Mandeta <span>DEM</span></button>
+        </form>
+
+        <form class="candidato cand_branco_nulo" method='get' action='#'>
+            <button class="branco_nulo" type="submit" value="branco" name="Next"><span>Branco</span> <span>Nulo</span> <span>Nenhum</span></button>
+        </form>
+
+        <form class="candidato cand_nao_sabe" method='get' action='#'>
+            <button class="branco_nulo" type="submit" value="nao_sabe" name="Next">Não sabe</button>
+        </form>
+
+    </div>
+
+{% endblock conteudo %}

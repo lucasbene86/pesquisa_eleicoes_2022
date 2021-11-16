@@ -1,0 +1,773 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;500;600;700;800&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+   
+:target {
+    scroll-margin-top: .8em;
+}
+
+/*----------------------------------------PAGINA DE LOGIN----------------------------------------*/
+
+#pagina_login{
+    width: 100vw;
+    height: 100vh;
+}
+
+/*____________________Containar menu___________________*/
+.container_menu{
+    width: 100vw;
+    height: 15vh;
+    display: flex;
+    align-items: center;
+    background-image: url('https://i.postimg.cc/VN6cPSb2/fundo-tela-login.png');
+    background-position: center;
+}
+
+/* Titulo do site (LOGO) */
+.container_logo_site{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 18%;
+    height: 100%;
+}
+
+.titulo_logo{
+    line-height: 20px;
+    font-weight: 500;
+    color: #cecfd2;
+}
+
+.titulo_logo span{
+    display: block;
+    font-weight: 600;
+    color: #f6f6f7;
+}
+
+
+/*-> Botões do menu*/
+.container_botoes_menu{
+    width: 30%;
+    height: 40%;
+    display: flex;
+    align-items: center;
+}
+
+.btn_menu{
+    text-decoration: none;
+    font-size: 0.9rem;
+    margin-left: 2rem;
+    color: #ffff;
+    background-color: rgb(255, 255, 255, 0%);
+    transition: all .3s ease;
+}
+
+.btn_menu:hover{
+    color: #ff5274;
+    cursor: pointer;
+}
+
+
+/*____________________Containar baixo___________________*/
+.container_baixo{
+    width: 100vw;
+    height: 85vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: rgb(255, 255, 255);
+}
+
+/*Container Cabeçalho*/
+.container_cabecalho{
+    margin-top: -5rem;
+    text-align: center;
+    width: 40vw;
+}
+
+.Informacao_tela_login{
+    font-weight: 300;
+    font-size: 25px;
+    color: #373737;
+}
+
+.Informacao_tela_login span{
+    display: block;
+    text-align: center;
+    font-weight: 400;
+    font-size: 23px;
+}
+
+/*-> Formulario para login*/
+.container_login{
+    margin-top: 2rem;
+    width: 28vw;
+    height: 30vh;
+}
+.container_formulario{
+    display: flex;
+    flex-direction: column;
+}
+
+.digite_o_cpf{
+    visibility: hidden;
+}
+
+.caixa_input{
+    padding-left: 2rem;
+    border-radius: 5px;
+    border: 1px solid #e0e0e0;
+    height: 2.7rem;
+    font-size: 1.2rem;
+    color: rgb(36, 36, 36);
+}
+
+.caixa_input::placeholder {
+    font-size: 15px;
+}
+
+/*Container Checkbox*/
+.container_checkbox{
+    display: flex;
+    margin-top: 2%;
+}
+
+.termos_servicos{
+    font-size: 0.9rem;
+    margin-left: 2%;
+    font-weight: 400;
+}
+
+/*Termos e serviços Modal*/
+.link_modal{
+    font-size: 0.9rem;
+    text-decoration: none;
+    margin-left: 4px;
+}
+
+.modal {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    background: rgba(0, 0, 0, 0.8);
+    z-index: 99999;
+    opacity:0;
+    -webkit-transition: opacity 400ms ease-in;
+    -moz-transition: opacity 400ms ease-in;
+    transition: opacity 400ms ease-in;
+    pointer-events: none;
+}
+
+.modal:target {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.modal > div {
+    border-radius: 8px;
+    width: 600px;
+    position: relative;
+    margin: 10% auto;
+    padding: 15px 20px;
+    background: #fff;
+  }
+
+.fechar {
+    position: absolute;
+    width: 30px;
+    right: -15px;
+    top: -20px;
+    text-align: center;
+    line-height: 30px;
+    margin-top: 5px;
+    background: #ff4545;
+    background-image: url('/static/images/x.png');
+    background-position: center;
+    background-repeat: no-repeat;
+    border-radius: 50%;
+    font-size: 0;
+}
+
+.container_texto_politica h2{
+    text-align: center;
+    font-weight: 500;
+}
+
+/*Botão entrar*/
+.botao_entrar{
+    margin-top: 2%;
+    border-radius: 5px;
+    font-weight: 300;
+    cursor: pointer;
+    height: 2.5rem;
+    color: rgb(255, 255, 255);
+    background-color: #ff5274;
+}
+
+.botao_entrar:hover{
+    background-color: #e44262;
+}
+
+
+/*----------------------------------------PAGINA DE VOTAÇÃO----------------------------------------*/
+
+.container_candidatos{
+    width: 70vw;
+    margin-top: 3rem;
+    margin-right: 5vw;
+    margin-left: 5vw;
+    align-items: center;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.candidato {
+    width: 10rem;  /* Largura */
+    height: 7rem;  /* Altura */
+    margin-left: 10px;
+    margin-bottom: 10px;
+}
+
+.candidato:last-child{
+    margin-right: 0;
+}
+
+
+/*Botões de candidatos*/
+.candidato button{
+    transition: all 0.3s ease-in-out;  /*Efeito de transição suave*/
+    cursor: pointer;  /*Cursor do mouse*/
+    font-size: 1.1rem;
+    color: white;
+}
+.candidato span{
+    font-size: 0.9rem;
+    display: block;
+}
+
+
+/*Bolsonaro*/
+.cand_1{
+    background-image: url("https://i.postimg.cc/NG90BP4z/bolsonaro.png");
+    background-position: center;
+}
+.bolsonaro{
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+}
+.bolsonaro:hover{
+    opacity: 80%;
+    color: black;
+    box-shadow: 6px 6px 10px rgb(0, 0, 0, 0.9);
+}
+
+/*Ciro gomes*/
+.cand_2{
+    background-image: url("https://i.postimg.cc/P5zsd19c/ciro.png");
+    background-position: center;
+}
+.ciro_gomes{
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    background-image: url("https://i.postimg.cc/9fJ67CWY/fundo-pdt.png");
+}
+.ciro_gomes:hover{
+    opacity: 80%;
+    box-shadow: 6px 6px 10px rgb(0, 0, 0, 0.9);
+}
+
+/*João Doria*/
+.cand_3{
+    background-image: url("https://i.postimg.cc/76RjK9JC/joao-doria.png");
+    background-position: center;
+}
+.joao_doria{
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    background-image: url("https://i.postimg.cc/Bb1kkF2m/fundo-psdb.png");
+}
+.joao_doria:hover{
+    opacity: 80%;
+    box-shadow: 6px 6px 10px rgb(0, 0, 0, 0.9);
+}
+
+/*Lula*/
+.cand_4{
+    background-image: url("https://i.postimg.cc/yW4tHNPs/lula.png");
+    background-position: center;
+}
+.lula{
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    background-image: url("https://i.postimg.cc/V6v39pvQ/fundo-pt.png");
+}
+.lula:hover{
+    opacity: 80%;
+    box-shadow: 6px 6px 10px rgb(0, 0, 0, 0.9);
+}
+
+/*Mandeta*/
+.cand_5{
+    background-image: url("https://i.postimg.cc/dQbV1mNt/mandeta.png");
+    background-position: center;
+}
+.mandeta{
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    background-image: url("https://i.postimg.cc/tgq0JYHg/fundo-dem.png");
+}
+.mandeta:hover{
+    opacity: 80%;
+    box-shadow: 6px 6px 10px rgb(0, 0, 0, 0.9);
+}
+
+/*branco*/
+.cand_branco_nulo button{
+    color: rgb(39, 39, 39);
+}
+.branco_nulo{
+    width: 100%;
+    height: 100%;
+}
+.branco_nulo:hover{
+    background:rgb(255, 255, 255);
+    box-shadow: 6px 6px 10px rgb(0, 0, 0, 0.9);
+}
+
+/*Nulo*/
+.cand_nao_sabe button{
+    color: rgb(39, 39, 39);
+    font-size: 1rem;
+}
+.nao_sabe{
+    width: 100%;
+    height: 100%;
+}
+.nao_sabe:hover{
+    background:rgb(255, 255, 255);
+    box-shadow: 6px 6px 10px rgb(0, 0, 0, 0.9);
+}
+
+
+/*----------------------------------------PAGINA DA ENQUETE----------------------------------------*/
+body{
+    overflow-x: hidden;
+}
+/*----------Container total de votos------------*/
+
+.container_total_votos{
+    position: fixed;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: wheat;
+    width: 100px;
+    height: 100px;
+    border-radius: 50px;
+    top: 80%;
+    left: 90%;
+    color: #ff5274;
+    border: 2px solid #ff5274;
+    background-color: transparent;
+    transition: all .3s ease;
+}
+.container_total_votos:hover{
+    background-color: #ff5274;
+    color: white;
+}
+
+.count{
+    margin-top: 0.5rem;
+    text-align: center;
+    font-size: 2rem;
+    line-height: 20px;
+    font-weight: 600;
+}
+.count span{
+    display: block;
+    font-size: 1rem;
+    font-weight: 400;
+}
+
+
+/*----------Container pagina inicial------------*/
+.container_index{
+    background-color: burlywood;
+    background-image: url('/static/images/fundo_tela_index.png');
+    width: 100vw;
+    height: 100vh;
+}
+
+.container_menu_pagina_index{
+    width: 100vw;
+    height: 15vh;
+    display: flex;
+    align-items: center;
+    background-position: center;
+}
+
+
+.container_enquete{
+    height: 85vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+}
+
+.container_para_grafico{
+    width: 40vw;
+    height: 85vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+/*Botões VOTAR e CANDIDATOS*/
+.container_btn_infor{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 5vw;
+}
+
+.container_btns_voto_candidatos{
+    width: 90vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container_vazio{
+    width: 5vw;
+}
+
+.container_botoes{
+    display: flex;
+    width: 100vw;
+    height: 8vh;
+}
+
+.btn_vota{
+    width: 9rem;
+    height: 2.8rem;
+    border-radius: 30px;
+    cursor: pointer;
+}
+
+.btn_1{
+    color: #ffff;
+    background: #ff5274;
+    margin-right: 3rem;
+    transition: all .3s ease;
+    font-size: 0.9rem;
+}
+.btn_1:hover{
+    background: #ce3856;
+}
+
+.btn_2{
+    color: #ff5274;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+    background-color: transparent;
+    border: 2px solid #ff5274;
+    transition: all .3s ease;
+    font-size: 0.9rem;
+}
+.btn_2:hover{
+    color: #ffffff;
+    background-color: #ff5274;
+}
+
+
+.infor_imagem{
+    background-image: url('/static/images/icone_infor.png');
+    background-repeat: no-repeat;
+    background-position: center;
+    opacity: 50%;
+    width: 30px;
+    height: 30px;
+    transition: all .3s ease;
+}
+
+.infor_imagem:hover{
+    opacity: 90%;
+}
+
+/*----------GRAFICO------------*/
+.container_grafico{
+    width: 35vw;
+    height: auto;
+    display: block;
+}
+
+.container_candidato{
+    width: 35vw;
+    height: 4.4rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all .3s ease;
+}
+
+.container_candidato:hover{
+    width: 36vw;
+}
+
+/*Avatar*/
+.container_avatar{
+    width: 5vw;
+    height: 10vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.avatar {
+    width: 60px;
+    height: 60px;
+	border-radius: 30px;
+    background-color: rgb(255, 255, 255);
+}
+/*Avatares dos candidatos*/
+.avatar_ciro_gomes{
+    background-image: url("https://i.postimg.cc/P5zsd19c/ciro.png");
+    background-size: 200%;
+	background-position: center;
+}
+
+.avatar_bolsonaro{
+    background-image: url("https://i.postimg.cc/NG90BP4z/bolsonaro.png");
+    background-size: 200%;
+	background-position: center;
+}
+
+.avatar_joao_doria{
+    background-image: url("https://i.postimg.cc/76RjK9JC/joao-doria.png");
+    background-size: 200%;
+	background-position: center;
+}
+
+.avatar_lula{
+    background-image: url("https://i.postimg.cc/yW4tHNPs/lula.png");
+    background-size: 200%;
+	background-position: center;
+}
+
+.avatar_mandeta{
+    background-image: url("https://i.postimg.cc/dQbV1mNt/mandeta.png");
+    background-size: 200%;
+	background-position: center;
+}
+
+.avatar_branco{
+	background-color: white;
+}
+
+.avatar_nao_sabe{
+    background-image: url("/static/images/icone_nao_sabe.png");
+    background-size: 50%;
+    background-repeat: no-repeat;
+	background-position: center;
+}
+
+
+/*Valores em %*/
+.container_valores{
+    margin-left: 2%;
+    width: 26vw;
+    height: 10vh;
+}
+
+.valor{
+    width: 100%;
+    height: 45%;
+    font-size: 1rem;
+    text-align: center;
+}
+
+.valor_width{
+    background: rgba(0, 0, 0, 0.4);
+    color: #ffffff;
+    border-radius: 5px;
+    font-weight: 700;
+    height: 100%;
+}
+
+/*Nomes*/
+.nome_candidato{
+    color: white;
+    font-size: 1rem;
+    font-weight: 400;
+    height: 1.3rem;
+}
+
+
+/*----------Container Informações------------*/
+.container_infor{
+    background-color: #f3f4f8;
+    width: 100vw;
+    height: auto;
+}
+
+#container_politicos{
+    background-color: white;
+    width: 100vw;
+    height: 25vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.escrita_politicos{
+    text-align: center;
+    font-size: 2rem;
+    font-weight: 200;
+}
+.escrita_politicos span{
+    display: block;
+    font-weight: 300;
+}
+
+/*Candidatos*/
+.container_infor_candidato{
+    background-color: wheat;
+    width: 100vw;
+    height: 56vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 2rem;
+}
+.container_texto{
+    width: 50vw;
+    height: 100%;
+    background-color: aquamarine;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.texto{
+    background-color: beige;
+    width: 90%;
+    height: 80%;
+}
+.texto h3{
+    color: #373737;
+    font-weight: 500;
+}
+.texto h4{
+    color: #373737;
+    font-weight: 400;
+    text-align: justify;
+}
+
+.texto a, .fonte{
+    font-weight: 400;
+    display: flex;
+    justify-content: end;
+    text-decoration: none;    
+}
+
+.foto{
+    width: 27vw;
+    height: 100%;
+    background-color: rgb(79, 126, 110);
+}
+.foto img{
+    width: 100%;
+}
+
+/*----------Container Rodapé------------*/
+
+#container_rodape{
+    margin-top: 3rem;
+    color: white;
+    width: 100vw;
+    height: 30vh;
+    /*background-color: #272a32;*/
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    flex-direction: column;
+}
+
+/* CONTATO */
+.container_contato{
+    border-bottom: 1px solid #d3d3d3;
+    border-top: 1px solid #d3d3d3;
+    height: 12vh;
+    width: 90vw;
+    display: flex;
+}
+
+.contato{
+    color: rgb(53, 53, 53);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 9vw;
+}
+.contato_h3{
+    font-weight: 400;
+}
+
+.icones_rede_social{
+    width: 20vw;
+    display: flex;
+    align-items: center;
+}
+
+#container_whatsapp, #container_linkdin, #container_workana{
+    width: 3rem;
+    height: 3rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#whatsapp, #linkdin, #workana{
+    height: 40px;
+}
+
+#icone_whatsapp:hover, #icone_linkdin:hover, #icone_workana:hover{
+    width: 40px;
+}
+
+/* CCONTAINER DESENVOLVEDOR */
+#container_desenvolvedor{
+    color: rgb(58, 58, 58);
+    height: 10vh;
+    display: flex;
+    align-items: flex-end;
+}
+
+.container_desenvolvedor_h4{
+    font-weight: 400;
+}

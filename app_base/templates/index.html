@@ -1,0 +1,254 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!--<meta http-equiv="refresh" content="15">-->
+    <!--<link rel="stylesheet" href="{% static 'css/grafico.css' %}">  Link CSS-->
+    <link rel="stylesheet" href="{% static 'css/estilos.css' %}">
+    <link rel="icon" type="image/png" href="https://i.postimg.cc/SNQfGYKw/logo.png" />  <!--Icone da pagina no titulo-->
+    <title>PESQUISA ELEIÇÕES 2022</title>  <!--Titulo da pagina-->
+</head>
+<body>
+    <div class="container_total_votos">
+        <div id="se" class="count">{{ total_votos }} <span>votos</span></div>
+    </div>
+    <div class="container_index">
+        <nav class="container_menu_pagina_index">
+            <div class="container_logo_site">
+                <h3 class="titulo_logo">PESQUISA<span>ELEIÇÕES 2022</span></h3>
+            </div>
+
+            <!--BOTÕES MENU-->
+            <div class="container_botoes_menu">
+                <form class="form_btn_votar" method='get' action='#'>
+                    <button class="btn_votar btn_menu" type="submit" value="btn_votar" name="Next">VOTAR</button>
+                </form>
+
+                <div class="form_btn_candidatos">
+                    <a href="#container_politicos" class="btn_candidatos btn_menu">CANDIDATOS</a>
+                </div>
+
+                <div class="form_btn_contato">
+                    <a href="#container_rodape" class="btn_contato btn_menu">CONTATO</a>
+                </div>
+            </div>
+        </nav>
+
+        <div class="container_enquete">
+            <!--GRAFICO DE ENQUETE-->
+            <div class="container_grafico">
+                <!--Candidato 1-->
+                <div class="container_candidato">
+                    <div class="container_avatar">
+                        <div class="avatar avatar_ciro_gomes">
+                        </div>
+                    </div>
+                    <div class="container_valores">
+                        <h5 class="nome_candidato">Ciro Gomes</h5>
+                        <div class="valor">
+                            <div class="valor_width" style="width: {{ ciro }}%;">{{ ciro }}%</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!--Candidato 2-->
+                <div class="container_candidato">
+                    <div class="container_avatar">
+                        <div class="avatar avatar_bolsonaro">
+                        </div>
+                    </div>
+                    <div class="container_valores">
+                        <h5 class="nome_candidato">Bolsonaro</h5>
+                        <div class="valor">
+                            <div class="valor_width" style="width: {{ bolsonaro }}%;">{{ bolsonaro }}%</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!--Candidato 3-->
+                <div class="container_candidato">
+                    <div class="container_avatar">
+                        <div class="avatar avatar_joao_doria">
+                        </div>
+                    </div>
+                    <div class="container_valores">
+                        <h5 class="nome_candidato">João Doria</h5>
+                        <div class="valor">
+                            <div class="valor_width" style="width: {{ doria }}%;">{{ doria }}%</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!--Candidato 4-->
+                <div class="container_candidato">
+                    <div class="container_avatar">
+                        <div class="avatar avatar_lula">
+                        </div>
+                    </div>
+                    <div class="container_valores">
+                        <h5 class="nome_candidato">Lula</h5>
+                        <div class="valor">
+                            <div class="valor_width" style="width: {{ lula }}%;">{{ lula }}%</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!--Candidato 5-->
+                <div class="container_candidato">
+                    <div class="container_avatar">
+                        <div class="avatar avatar_mandeta">
+                        </div>
+                    </div>
+                    <div class="container_valores">
+                        <h5 class="nome_candidato">Mandeta</h5>
+                        <div class="valor">
+                            <div class="valor_width" style="width: {{ mandeta }}%;">{{ mandeta }}%</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!--Candidato 6(Branco)-->
+                <div class="container_candidato">
+                    <div class="container_avatar">
+                        <div class="avatar avatar_branco">
+                        </div>
+                    </div>
+                    <div class="container_valores">
+                        <h5 class="nome_candidato">Branco, Nulo ou Nenhum</h5>
+                        <div class="valor">
+                            <div class="valor_width" style="width: {{ branco }}%;">{{ branco }}%</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!--Candidato 7(Não Sabe)-->
+                <div class="container_candidato">
+                    <div class="container_avatar">
+                        <div class="avatar avatar_nao_sabe">
+                        </div>
+                    </div>
+                    <div class="container_valores">
+                        <h5 class="nome_candidato">Não Sabe</h5>
+                        <div class="valor">
+                            <div class="valor_width" style="width: {{ nao_sabe }}%;">{{ nao_sabe }}%</div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="container_botoes">
+                <div class="container_btn_infor">
+                    <div class="infor_imagem">
+                    </div>
+                </div>
+
+
+                <div class="container_btns_voto_candidatos">
+                    <form class="form_btn_voto" method='get' action='#'>
+                        <button class="btn_vota btn_1" type="submit" value="btn_votar" name="Next">VOTAR</button>
+                    </form>
+                    <a href="#container_politicos" class="btn_vota btn_2">CANDIDATOS</a>
+                </div>
+
+                <div class="container_vazio"></div>
+            </div>
+        </div>
+
+    </div>
+
+    <div class="container_infor">
+        <section id="container_politicos">
+            <h3 class="escrita_politicos">Conheça os possíveis candidatos à<span>Presidência da República 2022</span> </h3>
+        </section>
+        
+        <div>
+            <!--INFORMAÇÕES DOS CANDIDATOS-->
+            <div class="container_infor_candidato">
+                <div class="container_texto">
+                    <div class="texto">
+                        <h3>CIRO GOMES FERREIRA</h3>
+                        <h4>Ciro Ferreira Gomes é um político, advogado e professor universitário
+                            brasileiro filiado ao Partido Democrático Trabalhista,
+                            do qual é vice-presidente. Ciro Ferreira Gomes nasceu em
+                            Pindamonhangaba, interior de São Paulo, filho do cearense
+                            José Euclides Ferreira Gomes Júnior (1918-1996) e da paulista
+                            Maria José Santos (1928-2015). Em 1961, aos quatro anos de
+                            idade, a família de Ciro instalou-se em Sobral, Ceará, onde
+                            vivia toda a sua família paterna. Seu pai era defensor público
+                            e sua mãe professora. Em Sobral, Ciro concluiu o curso secundário
+                            em uma escola pública da cidade.</h4>
+
+                        <h5 class="fonte">Fonte wikipedia</h5>
+                        
+                        <a href="https://pt.wikipedia.org/wiki/Ciro_Gomes" target="_blank">Saiba mais!</a>
+                    </div>
+                </div>
+                <div class="foto">
+                    <img src="{% static 'images/ciro.png' %}" alt="Ciro Gomes">
+                </div>
+            </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        </div>
+        <section id="container_rodape">
+            <div class="container_contato">
+                <div class="contato">
+                    <h3 class="contato_h3">Contato:</h3>
+                </div>
+                <div class="icones_rede_social">
+                    <!-- Whatsapp -->
+                    <div id="container_whatsapp">
+                        <a id="whatsapp" href="https://api.whatsapp.com/send?phone=5577988580642&text=Ol%C3%A1,%20vim%20pelo%20site" target="_blank">
+                            <img id="icone_whatsapp" src="{% static 'images/icone-whatsapp.png' %}" alt="Whatsapp">
+                        </a>
+                    </div>
+
+                    <!-- Linkdin -->
+                    <div id="container_linkdin">
+                        <a id="linkdin" href="https://www.linkedin.com/in/joaolucasbenevides/" target="_blank">
+                            <img id="icone_linkdin" src="{% static 'images/icone-linkdin.png' %}" alt="linkdin">
+                        </a>
+                    </div>
+
+                    <!-- Workana -->
+                    <div id="container_linkdin">
+                        <a id="workana" href="https://www.workana.com/freelancer/9d238db56f2677e19af798ac7fdb30df" target="_blank">
+                            <img id="icone_workana" src="{% static 'images/icone-workana.png' %}" alt="Workana">
+                        </a>
+                    </div>
+
+                </div>
+            </div>
+
+            <div id="container_desenvolvedor">
+                <h4 class="container_desenvolvedor_h4">Desenvolvedor João Lucas Benevides</h4>
+            </div>
+
+        </section>
+    </div>
+
+    <script src="{% static 'js/js.js' %}"></script>
+</body>
+</html>

@@ -1,0 +1,75 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'css/estilos.css' %}">
+    <title>PESQUISA ELEIÇÕES 2022</title>
+</head>
+<body>
+    <div id="pagina_login">
+
+        <div class="container_menu">
+            <div class="container_logo_site">
+                <h3 class="titulo_logo">PESQUISA<span>ELEIÇÕES 2022</span></h3>
+            </div>
+
+            <div class="container_botoes_menu">
+                <form class="form_btn_votar" method='get' action='#'>
+                    <button class="btn_votar btn_menu" type="submit" value="btn_votar" name="Next">VOTAR</button>
+                </form>
+
+                <form class="form_btn_enquete" method='get' action='#'>
+                    <button class="btn_enquete btn_menu" type="submit" value="btn_enquete" name="Next">ENQUETE</button>
+                </form>
+    
+                <form class="form_btn_candidatos" method='get' action='#'>
+                    <button class="btn_candidatos btn_menu" type="submit" value="btn_candidatos" name="Next">CANDIDATOS</button>
+                </form>
+
+                <form class="form_btn_contato" method='get' action='#'>
+                    <button class="btn_contato btn_menu" type="submit" value="btn_contato" name="Next">CONTATO</button>
+                </form>
+            </div>
+        </div>
+
+        <div class="container_baixo">
+            {% block conteudo %}
+                <div class="container_cabecalho">
+                    <h3 class="Informacao_tela_login">Apenas um voto é permitido por pessoa<span>Coloque o CPF para continuar votando</span></h3>
+                </div>
+        
+                <div class="container_login">
+                    <form method="POST" class="container_formulario" action="">
+                        <h3 class="digite_o_cpf">Digite o CPF para votar:</h3>
+                        {% csrf_token %}
+                        <input type="text" class="caixa_input cpf-mask" name="cpf" size="11" maxlength="14" autocomplete="off" placeholder="Digite o CPF para votar" required="">
+
+                        <div class="container_checkbox">
+                            <div>
+                                <input type="checkbox" id="termos_servicos" onclick="if (this.checked) { botao.disabled = false; } else if (! botao.checked) { botao.disabled = true; }" name="termos">
+                            </div>
+                            <label class="termos_servicos" for="termos_servicos">Política de</label>
+
+                            <a href="#abrirModal" class="link_modal">privacidade</a>
+                            <div id="abrirModal" class="modal">
+                                <div class="container_politica">
+                                    <a href="#fechar" title="Fechar" class="fechar">x</a>
+                                    <div class="container_texto_politica">
+                                        <h2 class="titulo_politica_de_privaciade">Política de privacidade</h2>
+                                        <p>Política</p>
+                                        <p>Política</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <button class="botao_entrar" type="submit" name="botao" onclick="if (this.checked) { botao.disabled = false; } else if (! termos.checked) { botao.disabled = true; }">CLIQUE PARA VOTAR</button>
+                    </form>
+                </div>
+            {% endblock conteudo %}
+        </div>
+    </div>    
+</body>
+</html>

@@ -1,0 +1,1 @@
+web: gunicorn enquete_projeto_web.wsgi --log-file -
