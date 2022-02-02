@@ -381,7 +381,7 @@ body{
     display: flex;
     align-items: center;
     justify-content: center;
-    background-color: wheat;
+    flex-direction: column;
     width: 100px;
     height: 100px;
     border-radius: 50px;
@@ -399,16 +399,11 @@ body{
 
 .count{
     margin-top: 0.5rem;
-    text-align: center;
     font-size: 2rem;
     line-height: 20px;
     font-weight: 600;
 }
-.count span{
-    display: block;
-    font-size: 1rem;
-    font-weight: 400;
-}
+
 
 
 /*----------Container pagina inicial------------*/

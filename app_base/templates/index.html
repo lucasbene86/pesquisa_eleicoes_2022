@@ -10,10 +10,12 @@
     <link rel="stylesheet" href="{% static 'css/estilos.css' %}">
     <link rel="icon" type="image/png" href="https://i.postimg.cc/SNQfGYKw/logo.png" />  <!--Icone da pagina no titulo-->
     <title>PESQUISA ELEIÇÕES 2022</title>  <!--Titulo da pagina-->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
 </head>
 <body>
     <div class="container_total_votos">
-        <div id="se" class="count">{{ total_votos }} <span>votos</span></div>
+        <div id="se" class="count">{{ total_votos }}</div>
+        <div class="votos">votos</div>
     </div>
     <div class="container_index">
         <nav class="container_menu_pagina_index">
@@ -164,7 +166,7 @@
         <section id="container_politicos">
             <h3 class="escrita_politicos">Conheça os possíveis candidatos à<span>Presidência da República 2022</span> </h3>
         </section>
-        
+
         <div>
             <!--INFORMAÇÕES DOS CANDIDATOS-->
             <div class="container_infor_candidato">
@@ -191,9 +193,6 @@
                     <img src="{% static 'images/ciro.png' %}" alt="Ciro Gomes">
                 </div>
             </div>
-
-
-
 
 
 
@@ -249,6 +248,6 @@
         </section>
     </div>
 
-    <script src="{% static 'js/js.js' %}"></script>
+    <script src="{% static 'js/contagem.js' %}"></script>
 </body>
 </html>
